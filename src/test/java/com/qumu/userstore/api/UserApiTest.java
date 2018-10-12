@@ -1,9 +1,8 @@
 package com.qumu.userstore.api;
 
-import javax.annotation.Resource;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -19,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class UserApiTest {
 
-	@Resource
+	@Autowired
 	private MockMvc mockMvc;
 
 	/**
@@ -28,7 +27,7 @@ public class UserApiTest {
 	 * Then the details of the user with username leon should be returned.
 	 */
 	@Test
-	public void getUserWithUsernameGraham() throws Exception {
+	public void getUserWithUsernameLeon() throws Exception {
 		this.mockMvc.perform(get("/users/leon"))
 				.andDo(print())
 				.andExpect(status().isOk())
